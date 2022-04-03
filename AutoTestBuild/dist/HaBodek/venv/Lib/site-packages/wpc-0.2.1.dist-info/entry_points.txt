@@ -1,0 +1,3 @@
+[console_scripts]
+wpc = wpc.shell_cli:shell.cli_commands
+

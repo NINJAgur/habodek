@@ -1,0 +1,79 @@
+Metadata-Version: 2.1
+Name: wpc
+Version: 0.2.1
+Summary: WPC is a light-weight, highly configurable and easy to use library with a minimal CLI, with the objective of manage your work (hours and costs) and emit invoices.
+Home-page: https://github.com/lparolari/wpc
+Author: Luca Parolari
+Author-email: luca.parolari23@gmail.com
+License: GNU General Public License v3
+Keywords: wpc
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: Click (>=6.0)
+Requires-Dist: configparser
+Requires-Dist: num2words
+Requires-Dist: pylatex
+Requires-Dist: python-dateutil
+Requires-Dist: sqlalchemy
+Requires-Dist: tabulate
+
+===================
+Work Pay Calculator
+===================
+
+
+.. image:: https://img.shields.io/pypi/v/wpc.svg
+        :target: https://pypi.python.org/pypi/wpc
+
+.. image:: https://img.shields.io/travis/lparolari/wpc.svg
+        :target: https://travis-ci.org/lparolari/wpc
+
+.. image:: https://readthedocs.org/projects/wpc/badge/?version=latest
+        :target: https://wpc.readthedocs.io/en/latest/?badge=latest
+        :alt: Documentation Status
+
+
+
+
+WPC is a light-weight, highly configurable and easy to use library with a minimal CLI, with the objective of manage your work (hours and costs) and emit invoices.
+
+
+* Free software: GNU General Public License v3
+* Documentation: https://wpc.readthedocs.io.
+
+**WIP**
+Start seeing the full documentation file (`out/wpc.pdf`) in the `proj/specs` folder.
+
+
+Features
+--------
+
+* TODO
+
+Credits
+-------
+
+This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+
+.. _Cookiecutter: https://github.com/audreyr/cookiecutter
+.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+
+
+=======
+History
+=======
+
+0.1.0 (2018-11-18)
+------------------
+
+* First release on PyPI.
+
+
