@@ -1,7 +1,0 @@
-('H:\\Edan_install\\Python\\share\\glew\\bin',
- None,
- [],
- 'DATA',
- [('glew32.dll',
-   'H:\\Edan_install\\Python\\share\\glew\\bin\\glew32.dll',
-   'DATA')])
