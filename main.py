@@ -82,7 +82,6 @@ def check_security_groups():
                               stderr=subprocess.PIPE,
                               universal_newlines=True)
 
-    # Fetch output
     for line in groups.stdout:
         print(line.strip())
         if "Administrators" in line.strip():
