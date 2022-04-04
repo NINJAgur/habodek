@@ -64,7 +64,7 @@ def check_mcafee():
     z = GetApps(win32con.HKEY_CURRENT_USER, 0)
 
     return all(map(lambda each: each in (x + y + z)[0], ["McAfee Agent", "McAfee RSD Sensor", "McAfee Active Response",
-                                                         "McAfee DLP Endpoint", "McAfee Endpoint Secuirty Firewall"]))
+                                                         "McAfee DLP Endpoint", "McAfee Endpoint Security Firewall"]))
 
 
 def check_office():
