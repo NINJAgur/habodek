@@ -1,6 +1,8 @@
 __version__ = '1.0'
 __author__ = 'Edan Gurin'
 
+import os.path
+
 import win32con
 import win32net
 import winreg
@@ -59,12 +61,18 @@ def check_domain():
 
 
 def check_mcafee():
-    x = GetApps(win32con.HKEY_LOCAL_MACHINE, win32con.KEY_WOW64_32KEY)
-    y = GetApps(win32con.HKEY_LOCAL_MACHINE, win32con.KEY_WOW64_64KEY)
-    z = GetApps(win32con.HKEY_CURRENT_USER, 0)
+    return os.path.exists('C:\Program Files\McAfee\Agent\cmdagent.exe') and os.path.exists(
+        'C:\Program Files\McAfee\DLP\Agent') and os.path.exists(
+        'C:\Program Files\McAfee\Endpoint Security\Adaptive Threat Protection') and os.path.exists(
+        'C:\Program Files\McAfee\Endpoint Security\Firewall') and os.path.exists(
+        'C:\Program Files\McAfee\Endpoint Security\Threat Prevention')
 
-    return all(map(lambda each: each in (x + y + z)[0], ["McAfee Agent", "McAfee RSD Sensor", "McAfee Active Response",
-                                                         "McAfee DLP Endpoint", "McAfee Endpoint Security Firewall"]))
+    # x = GetApps(win32con.HKEY_LOCAL_MACHINE, win32con.KEY_WOW64_32KEY)
+    # y = GetApps(win32con.HKEY_LOCAL_MACHINE, win32con.KEY_WOW64_64KEY)
+    # z = GetApps(win32con.HKEY_CURRENT_USER, 0)
+    #
+    # return all(map(lambda each: each in (x + y + z)[0], ["McAfee Agent", "McAfee RSD Sensor", "McAfee Profiler",
+    #                                                      "McAfee Data Exchange Layer for MA", "McAfee Active Response"]))
 
 
 def check_office():
@@ -89,13 +97,12 @@ def check_security_groups():
     '''
     try:
         members = win32net.NetLocalGroupGetMembers(None, 'Administrators', 1)
-        return all(map(lambda each: each in list(map(lambda d: d['name'], members[0])), ["ggd-0383-Comp","ggd-0383-Oper", "ggd-0383-Sec"]))
+        return all(map(lambda each: each in list(map(lambda d: d['name'], members[0])),
+                       ["ggd-0383-Comp", "ggd-0383-Oper", "ggd-0383-Sec"]))
     except win32net.error as error:
         number, context, message = error.args
-        #print(message)
+        # print(message)
         return False
-
-
 
 
 def init_funcs(index):
@@ -193,6 +200,7 @@ class CompTest(Widget):
 class HaBodek(App):
     def build(self):
         Window.size = (500, 600)
+        check_mcafee()
         return CompTest()
 
 
